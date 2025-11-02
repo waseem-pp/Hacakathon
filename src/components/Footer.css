@@ -1,45 +1,52 @@
-footer {
-    background-color: #ffffff;
-    padding: 4rem 8rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    border-top: 1px solid #e5e7eb;
+.footer {
+  background-color: #ffffff;
+  padding: 3rem 6rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-top: 1px solid #e5e7eb;
+  gap: 3rem;
 }
 
+/* Each column */
 .footer-section {
-    flex: 1;
-    min-width:220px;
-    margin-bottom: 2rem;
+  flex: 1;
+  min-width: 180px;
 }
 
+/* Logo + tagline */
 .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #14532d; /* dark green tone */
 }
 
 .footer-logo img {
-    width:120px;
-    height: 30px;
+  width: 120px;
+  height: auto;
 }
 
 .footer p {
-    color: #6b7280;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-top: 0.75rem;
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  max-width: 240px;
 }
 
+/* Section titles */
 .footer h4 {
   font-weight: 600;
   color: #1f2937;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
 }
 
+/* Links */
 .footer ul {
   list-style: none;
   padding: 0;
@@ -47,11 +54,11 @@ footer {
 }
 
 .footer ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .footer ul li a {
-  color: #4b5563;
+  color: #374151;
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.2s ease-in-out;
@@ -61,24 +68,48 @@ footer {
   color: #00b37d;
 }
 
-/* ✅ Copyright section */
+/* Divider + copyright */
 .realfooter {
-  background-color: #ffffff;
-  text-align: center;
-  padding: 1.2rem 0;
+    text-align: center;
+  padding: 1rem 0 0.5rem;
   border-top: 1px solid #e5e7eb;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #6b7280;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .realfooter p {
   margin: 0;
 }
 
-/* ✅ Responsive adjustments */
+/* Optional: subtle top shadow for visual depth */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #00b37d, #7c3aed);
+  opacity: 0.1;
+}
+
+/* Responsive layout */
 @media (max-width: 900px) {
   .footer {
     flex-direction: column;
     padding: 2rem;
+    gap: 2rem;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer p {
+    margin: 0 auto;
   }
 }
