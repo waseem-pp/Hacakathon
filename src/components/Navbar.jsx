@@ -1,18 +1,22 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import "./Navbar.css";
+import logo from "../assets/logo.png"
 
 const Navbar = ()=> (
-    <nav className="bg-green-600 text-white py-3 shadow-md">
-    <div className="container mx-auto flex justify-between items-center px-4">
-        <Link to="/" className="text-2x1 font-bold tracking-wide">ShareCare</Link>
-        <div>
-            <Link to="/" className="hover:underline">Home</Link>
-            <Link to="/map" className="hover:underline">Live Map</Link>
-            <Link to="/post" className="hover:underline">Post Food</Link>
-            <Link to="/dashboard" className="hover:underline">Dashboard</Link>
-            <Link to="/login" className="bg-white text-green-600 px-3 py-1 rounded hover:bg-gray-100">Login</Link>
+    <nav className="navbar">
+        <div className="navbar-left">
+            <img src={logo} alt="logo" className="navbar-logo" />
         </div>
-    </div>
+
+        <div className="navbar-right">
+            <div>
+                <Link to="/how" className="navbar-link">How It Works</Link>
+                <Link to="/impact" className="navbar-link">Impact</Link>
+                <Link to="/signin" className="navbar-link">Sign In</Link>
+                <Link to="/get-started" className="navbar-button">Get Started</Link>
+            </div>
+        </div>
     </nav>
 );
 
