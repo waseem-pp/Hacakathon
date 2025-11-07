@@ -6,7 +6,7 @@
   background: linear-gradient(to right,#f3f7ec,#eaf9ef);
   flex-wrap: wrap;
   position: relative;
-  margin-top: 100rem;
+  margin-top: 105rem;
   z-index: 1;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .bold-green {
-  background: linear-gradient(30deg, #119b2d, #3588dc);
+  background: linear-gradient(30deg,#f47630, #119b2d );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
