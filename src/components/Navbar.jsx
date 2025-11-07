@@ -1,23 +1,31 @@
-import React from "react";
-import {Link} from 'react-router-dom';
+import React, { useState } from "react";
 import "./Navbar.css";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png"; // <-- replace with your logo file path
 
-const Navbar = ()=> (
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
     <nav className="navbar">
-        <div className="navbar-left">
-            <img src={logo} alt="logo" className="navbar-logo" />
-        </div>
+      <div className="nav-logo">
+        <img src={logo} alt="Logo" />
+      </div>
 
-        <div className="navbar-right">
-            <div>
-                <Link to="/how" className="navbar-link">How It Works</Link>
-                <Link to="/impact" className="navbar-link">Impact</Link>
-                <Link to="/signin" className="navbar-link">Sign In</Link>
-                <Link to="/get-started" className="navbar-button">Get Started</Link>
-            </div>
-        </div>
+      <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <button className="btn-outline">Sign In</button>
+        <button className="btn-primary">Sign Up</button>
+      </div>
+
+      <div
+        className={`menu-toggle ${menuOpen ? "active" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
-);
+  );
+};
 
 export default Navbar;

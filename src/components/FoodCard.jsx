@@ -4,7 +4,7 @@ import herosection from "../assets/herosection.jpg";
 
 const FoodCard = () =>{
     return(
-    <section className="hero">
+    <section className="food">
       <div className="hero-content">
         <h1>
           Save <span className="bold-dark">Food.</span>{" "}
@@ -16,8 +16,8 @@ const FoodCard = () =>{
         </p>
 
         <div className="hero-buttons">
-          <button className="btn-primary">Join Now</button>
-          <button className="btn-outline">Learn More</button>
+          <button className="btn-primary">Get Started</button>
+          <button className="btn-outline">View Available Food</button>
         </div>
       </div>
 

@@ -1,10 +1,13 @@
-.hero {
+.food {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5rem 8rem;
-  background: linear-gradient(to right, #50ca75, #f9fafb);
+  padding: 8rem 8rem;
+  background: linear-gradient(to right,#f3f7ec,#eaf9ef);
   flex-wrap: wrap;
+  position: relative;
+  margin-top: 100rem;
+  z-index: 1;
 }
 
 .hero-content {
@@ -25,7 +28,11 @@
 }
 
 .bold-green {
-  color: #10b981;
+  background: linear-gradient(30deg, #119b2d, #3588dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }
 
 .hero-content p {
@@ -78,6 +85,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  padding-left: 20px;
 }
 
 .hero-image img {
@@ -90,7 +98,7 @@
 
 /* ✅ Responsive Design */
 @media (max-width: 1024px) {
-  .hero {
+  .food {
     flex-direction: column;
     text-align: center;
     padding: 4rem 2rem;
@@ -100,7 +108,27 @@
     margin-bottom: 2rem;
   }
 
+  .hero-buttons {
+    justify-content: center;
+  }
+
   .hero-image img {
     max-width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.95rem;
   }
 }

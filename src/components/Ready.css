@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background section */
+.ready {
+  background-color: #ffffff;
+  color: #452f21;
+  text-align: center;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container inside the section */
+.ready-content {
+  max-width: 700px;
+}
+
+/* Gradient text for heading */
+.ready-content h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+/* Paragraph styling (optional gradient) */
+.ready-content p {
+  font-size: 1.2rem;
+  margin: 0 auto 2rem;
+  text-align:center;
+}
+
+/* Call-to-action button */
+.cta-btn {
+  background-color: #ff8a00;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 5rem;
+  margin-top: 1rem;
+}
+
+.cta-btn:hover {
+  background-color: #ff9900;
+}

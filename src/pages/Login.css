@@ -1,0 +1,129 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply a full-screen gradient to the body */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #00b140, #009bca); /* Green to Blue gradient */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure it takes up the full viewport height */
+  margin: 0; /* Remove default margin */
+}
+
+/* Styling for the container that holds the form */
+.sc-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  max-width: 1200px;
+  width: 100%;
+}
+
+
+.sc-hero-copy-wrap {
+  text-align: center;
+}
+
+.sc-hero-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.accent {
+  color: #ff5722; /* Accent color */
+}
+
+.sc-hero-copy {
+  font-size: 16px;
+  color: #777;
+}
+
+.sc-signup-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.sc-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sc-form-group {
+  margin-bottom: 15px;
+}
+
+.sc-form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.sc-form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.sc-form-group input:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.sc-btn {
+  padding: 12px;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.sc-btn.primary {
+  background-color: #4caf50;
+  color: white;
+}
+
+.sc-btn.primary:hover {
+  background-color: #45a049;
+}
+
+.full {
+  width: 100%;
+}
+
+.alt {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.alt a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.alt a:hover {
+  text-decoration: underline;
+}
+
+.sc-error {
+  color: red;
+  font-size: 12px;
+  margin-top: 10px;
+  display: none; /* Initially hidden */
+}
