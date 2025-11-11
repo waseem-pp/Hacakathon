@@ -6,44 +6,44 @@ const Featured = () => {
   const items = [
     {
       id: 1,
-      title: "Fresh Bakery Bundle",
+      title: "Chicken Dum Biriyani",
       description:
-        "Assorted breads and pastries from local bakery. Perfect condition, just closing time surplus!",
+        "a mixed rice dish from the Indian subcontinent made with spices, rice (typically basmati), and a protein like meat, fish, or vegetables",
       image:
-        "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=800&q=80",
-      tag: "Bakery",
-      discount: "60% OFF",
-      price: 8,
-      oldPrice: 20,
-      location: "Downtown Bakery",
+        "./src/assets/biriyani.jpg",
+      tag: "Prepared",
+      discount: "50% OFF",
+      price: 75,
+      oldPrice: 150,
+      location: "Raj Hotel, Karnataka",
       time: "Today",
     },
     {
       id: 2,
-      title: "Organic Vegetable Box",
+      title: "Chicken Fried Rice",
       description:
-        "Mixed seasonal vegetables, slightly imperfect but delicious. Great for cooking!",
+        "a popular dish of cooked rice stir-fried in a wok or pan with other ingredients like eggs, vegetables, and meat or seafood",
       image:
-        "https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=800&q=80",
-      tag: "Vegetable",
-      discount: "52% OFF",
-      price: 12,
-      oldPrice: 25,
-      location: "Green Farm Market",
-      time: "2 days",
+        "./src/assets/friedrice.jpg",
+      tag: "Prepared",
+      discount: "50% OFF",
+      price: 50,
+      oldPrice: 100,
+      location: "Red Chillies, Karnataka",
+      time: "Today",
     },
     {
       id: 3,
-      title: "Restaurant Meal Packs",
+      title: "Gulab Jamun",
       description:
-        "Quality prepared meals from Italian restaurant. Ready to heat and enjoy!",
+        "a soft, spongy, milk-solid-based Indian dessert made of deep-fried balls soaked in a fragrant sugar syrup, often flavored with cardamom, rose water, or saffron",
       image:
-        "https://images.unsplash.com/photo-1604908177225-06f982ffb3a0?auto=format&fit=crop&w=800&q=80",
+        "./src/assets/gulabjamuns.jpg",
       tag: "Prepared",
-      discount: "57% OFF",
-      price: 15,
-      oldPrice: 35,
-      location: "Bella Italia",
+      discount: "50% OFF",
+      price: 35,
+      oldPrice: 70,
+      location: "Bella Italia, Karnataka",
       time: "Today",
     },
   ];
@@ -81,8 +81,8 @@ const Featured = () => {
 
               <div className="price-row">
                 <div className="price">
-                  <strong>${item.price}</strong>{" "}
-                  <span className="old-price">${item.oldPrice}</span>
+                  <strong>₹{item.price}</strong>{" "}
+                  <span className="old-price">₹{item.oldPrice}</span>
                 </div>
                 <button className="details-btn">View Details</button>
               </div>

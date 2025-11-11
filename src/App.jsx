@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import AvailableFood from "./pages/Availablefood";
 import PostFood from "./pages/PostFood";
+import FoodDetails from "./pages/FoodDetails";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Route path="/Signup" element={<Signup />} />
       <Route path="/Availablefood" element={<AvailableFood />} />
       <Route path="/PostFood" element={<PostFood />} />
+      <Route path="/food/:id" element={<FoodDetails />} />
     </Routes>
   );
 }

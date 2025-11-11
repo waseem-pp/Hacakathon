@@ -6,55 +6,107 @@ import "./Availablefood.css";
 const foodList = [
   {
     id: 1,
-    title: "Fresh Bakery Bundle",
-    location: "Downtown Bakery",
-    quantity: "10 plates",
-    expiry: "Today",
-    price: 8,
-    oldPrice: 20,
-    tag: "Bakery",
-    discount: "60% OFF",
-    image:
-      "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=800&q=80",
+    title: "Chicken Dum Biriyani",
+    description:
+      "A mixed rice dish from the Indian subcontinent made with spices, rice (typically basmati), and a protein like meat, fish, or vegetables.",
+    image: "./src/assets/biriyani.jpg",
+    tag: "Prepared",
+    discount: "50% OFF",
+    price: 75,
+    oldPrice: 150,
+    location: "Raj Hotel, Karnataka",
+    time: "Today",
   },
   {
     id: 2,
-    title: "Organic Vegetable Box",
-    location: "Green Farm Market",
-    quantity: "5 boxes",
-    expiry: "2 days",
-    price: 12,
-    oldPrice: 25,
-    tag: "Vegetables",
-    discount: "52% OFF",
-    image:
-      "https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=800&q=80",
+    title: "Chicken Fried Rice",
+    description:
+      "A popular dish of cooked rice stir-fried in a wok or pan with other ingredients like eggs, vegetables, and meat or seafood.",
+    image: "./src/assets/friedrice.jpg",
+    tag: "Prepared",
+    discount: "50% OFF",
+    price: 50,
+    oldPrice: 100,
+    location: "Red Chillies, Karnataka",
+    time: "Today",
   },
   {
     id: 3,
-    title: "Restaurant Meal Packs",
-    location: "Bella Italia",
-    quantity: "8 packs",
-    expiry: "Today",
-    price: 15,
-    oldPrice: 35,
+    title: "Gulab Jamun",
+    description:
+      "A soft, spongy, milk-solid-based Indian dessert made of deep-fried balls soaked in a fragrant sugar syrup, often flavored with cardamom, rose water, or saffron.",
+    image: "./src/assets/gulabjamuns.jpg",
     tag: "Prepared",
-    discount: "57% OFF",
-    image:
-      "https://images.unsplash.com/photo-1604908177225-06f982ffb3a0?auto=format&fit=crop&w=800&q=80",
+    discount: "50% OFF",
+    price: 35,
+    oldPrice: 70,
+    location: "Bella Italia, Karnataka",
+    time: "Today",
   },
   {
     id: 4,
-    title: "Fruit Medley",
-    location: "City Market",
-    quantity: "10 packs",
-    expiry: "2 days",
-    price: 10,
-    oldPrice: 20,
-    tag: "Fruits",
-    discount: "55% OFF",
-    image:
-      "https://images.unsplash.com/photo-1574226516831-e1dff420e12e?auto=format&fit=crop&w=800&q=80",
+    title: "Parotta",
+    description:
+      "Layered flatbread from Southern India, made from refined wheat flour (maida) or sometimes whole wheat flour, cooked with oil or ghee and sometimes eggs.",
+    image: "./src/assets/parota.jpg",
+    tag: "Prepared",
+    discount: "50% OFF",
+    price: 30,
+    oldPrice: 60,
+    location: "Tasty Hut, Karnataka",
+    time: "Today",
+  },
+  {
+    id: 5,
+    title: "Shawarma",
+    description:
+      "A popular Middle Eastern dish made of seasoned, thinly sliced meat (like lamb, beef, or chicken) stacked in a cone shape on a vertical rotisserie and cooked slowly.",
+    image: "./src/assets/shawarma.jpg",
+    tag: "Prepared",
+    discount: "60% OFF",
+    price: 40,
+    oldPrice: 100,
+    location: "Tasty Hut, Karnataka",
+    time: "Today",
+  },
+  {
+    id: 6,
+    title: "Chicken Mandi",
+    description:
+      "A smoky, flavorful rice and meat dish popular in the Arabian Peninsula. Served communally and often garnished with raisins and fried onions.",
+    image: "./src/assets/mandi.jpg",
+    tag: "Prepared",
+    discount: "50% OFF",
+    price: 125,
+    oldPrice: 250,
+    location: "Mandi Stories, Karnataka",
+    time: "Today",
+  },
+  {
+    id: 7,
+    title: "Burger",
+    description:
+      "A sandwich consisting of a cooked patty—traditionally ground beef, but also other meats or plant-based substitutes—placed between two halves of a sliced bun.",
+    image: "./src/assets/burger.jpg",
+    tag: "Prepared",
+    discount: "50% OFF",
+    price: 100,
+    oldPrice: 200,
+    location: "Grub Cafe, Karnataka",
+    time: "Today",
+  },
+  {
+    id: 8,
+    title: "Ghee Rice",
+    description:
+      "An aromatic and flavorful one-pot meal made by cooking rice with ghee, whole spices, and garnished with fried onions, cashews, and raisins.",
+    image: "./src/assets/gheerice.jpg",
+    tag: "Prepared",
+    discount: "50% OFF",
+    price: 35,
+    oldPrice: 70,
+    location: "Red Chillies, Karnataka",
+    time: "Today",
   },
 ];
 
@@ -67,44 +119,6 @@ export default function BrowseSurplusFood() {
     return user && user.phone;
   };
 
-  const handleAction = async (food, action) => {
-    if (!checkLogin()) {
-      alert("Please log in first!");
-      navigate("/login");
-      return;
-    }
-
-    const user = JSON.parse(localStorage.getItem("user"));
-    const endpoint =
-      action === "order"
-        ? "http://localhost:5000/api/order"
-        : "http://localhost:5000/api/cart";
-
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          userPhone: user.phone,
-          foodId: food.id,
-          foodTitle: food.title,
-          quantity: food.quantity,
-        }),
-      });
-
-      if (res.ok) {
-        alert(
-          action === "order"
-            ? "Order placed successfully!"
-            : `${food.title} added to cart!`
-        );
-      } else alert("Something went wrong. Please try again.");
-    } catch (err) {
-      console.error("Error:", err);
-      alert("Server error. Please try again later.");
-    }
-  };
-
   const filteredFoods = foodList.filter((food) =>
     food.title.toLowerCase().includes(search.toLowerCase())
   );
@@ -113,7 +127,7 @@ export default function BrowseSurplusFood() {
     <div className="browse-page">
       {/* Header Section */}
       <header className="browse-header">
-        <h1>Browse Surplus Food</h1>
+        <h1>Browse Food</h1>
         <p>Discover fresh food at great prices near you</p>
       </header>
 
@@ -149,31 +163,31 @@ export default function BrowseSurplusFood() {
 
             <div className="food-content">
               <h3>{food.title}</h3>
-              <p>
-                Assorted {food.tag.toLowerCase()} items. Perfect for sharing or
-                saving!
-              </p>
+              <p>{food.description.slice(0, 80)}...</p>
 
               <div className="info">
                 <span>
                   <FaMapMarkerAlt /> {food.location}
                 </span>
                 <span>
-                  <FaClock /> {food.expiry}
+                  <FaClock /> {food.time}
                 </span>
               </div>
 
               <div className="price-row">
                 <div className="price">
-                  <strong>${food.price}</strong>
-                  <span className="old-price">${food.oldPrice}</span>
+                  <strong>₹{food.price}</strong>
+                  <span className="old-price">₹{food.oldPrice}</span>
                 </div>
-                <button
+
+                {/* View Details navigates to details page */}
+                <Link
+                  to={`/food/${food.id}`}
+                  state={{ food }}
                   className="details-btn"
-                  onClick={() => handleAction(food, "order")}
                 >
                   View Details
-                </button>
+                </Link>
               </div>
             </div>
           </div>
