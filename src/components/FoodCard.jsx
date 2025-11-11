@@ -1,23 +1,23 @@
 import React from "react";
 import "./FoodCard.css";
 import herosection from "../assets/herosection.jpg";
+import { Link } from "react-router-dom";
 
 const FoodCard = () =>{
     return(
     <section className="food">
       <div className="hero-content">
         <h1>
-          Save <span className="bold-dark">Food.</span>{" "}
-          <span className="bold-green">Serve People.</span>
+          Save Food, Save Money,
+          <span className="bold-green">Save the Planet.</span>
         </h1>
         <p>
-          Connect surplus food with those who need it. Join our community of donors,
-          volunteers, and NGOs fighting food waste together.
+          Join our community marketplace for surplus food. Buy fresh food at great prices or share your excess to reduce waste.
         </p>
 
         <div className="hero-buttons">
-          <button className="btn-primary">Get Started</button>
-          <button className="btn-outline">View Available Food</button>
+          <Link to="AvailableFood"><button className="btn-primary">Browse Food </button></Link>
+          <Link to="PostFood"><button className="btn-outline">Post Food</button></Link>
         </div>
       </div>
 

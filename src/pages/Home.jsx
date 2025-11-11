@@ -2,8 +2,6 @@ import React from "react";
 import FoodCard from "../components/FoodCard";
 import HowItWorks from "../components/HowItWorks";
 import Platform from "../components/Platform";
-import Ready from "../components/Ready";
-import Login from "./Login";
 import Navbar from "../components/Navbar";
 import "./Home.css";
 
@@ -14,7 +12,6 @@ export default function Home() {
     <FoodCard />
     <HowItWorks />
     <Platform />
-    <Ready />
     </>
 
   );

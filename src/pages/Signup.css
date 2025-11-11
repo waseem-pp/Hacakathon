@@ -1,0 +1,140 @@
+/* Page container */
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Signup box */
+.signup-box {
+  background: #fff;
+  padding: 3rem 4rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 360px;
+  transition: 0.3s ease;
+}
+
+.signup-box:hover {
+  transform: scale(1.02);
+}
+
+.signup-box h2 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.signup-box p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Inputs */
+.signup-box input {
+  width: 100%;
+  padding: 0.85rem;
+  margin: 0.6rem 0;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.signup-box input:focus {
+  border-color: #11998e;
+  box-shadow: 0 0 4px rgba(17, 153, 142, 0.3);
+}
+
+/* Signup button */
+.signup-box button[type="submit"] {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.signup-box button[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+/* OTP section */
+.otp-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.otp-row input {
+  flex: 1;
+}
+
+.otp-row button {
+  padding: 0.7rem 0.9rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Hover and disabled states for OTP button */
+.otp-row button:hover {
+  background-color: #0056d2;
+}
+
+.otp-row button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Login link section */
+.login-link {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-link a {
+  color: #11998e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Smooth fade-in animation */
+.signup-box {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

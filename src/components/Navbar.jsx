@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import logo from "../assets/logo.png"; // <-- replace with your logo file path
+import logo from "../assets/logo.png"; 
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,8 +13,8 @@ const Navbar = () => {
       </div>
 
       <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <button className="btn-outline">Sign In</button>
-        <button className="btn-primary">Sign Up</button>
+        <Link to="/login"><button className="btn-outline">Sign In</button></Link>
+        <Link to="/Signup"><button className="btn-primary">Sign Up</button></Link>
       </div>
 
       <div

@@ -1,64 +1,97 @@
 import React from "react";
-import { FaClock, FaMapMarkerAlt, FaHeart, FaUsers } from "react-icons/fa";
+import { FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import "./Platform.css";
 
-export default function App() {
+const Featured = () => {
+  const items = [
+    {
+      id: 1,
+      title: "Fresh Bakery Bundle",
+      description:
+        "Assorted breads and pastries from local bakery. Perfect condition, just closing time surplus!",
+      image:
+        "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=800&q=80",
+      tag: "Bakery",
+      discount: "60% OFF",
+      price: 8,
+      oldPrice: 20,
+      location: "Downtown Bakery",
+      time: "Today",
+    },
+    {
+      id: 2,
+      title: "Organic Vegetable Box",
+      description:
+        "Mixed seasonal vegetables, slightly imperfect but delicious. Great for cooking!",
+      image:
+        "https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=800&q=80",
+      tag: "Vegetable",
+      discount: "52% OFF",
+      price: 12,
+      oldPrice: 25,
+      location: "Green Farm Market",
+      time: "2 days",
+    },
+    {
+      id: 3,
+      title: "Restaurant Meal Packs",
+      description:
+        "Quality prepared meals from Italian restaurant. Ready to heat and enjoy!",
+      image:
+        "https://images.unsplash.com/photo-1604908177225-06f982ffb3a0?auto=format&fit=crop&w=800&q=80",
+      tag: "Prepared",
+      discount: "57% OFF",
+      price: 15,
+      oldPrice: 35,
+      location: "Bella Italia",
+      time: "Today",
+    },
+  ];
+
   return (
-    <section className="platform">
-      <h1 className="platform-title">Platform Features</h1>
-      <p className="platform-subtitle">
-        Built with compassion and efficiency in mind
-      </p>
+    <section className="featured-section">
+      <div className="featured-header">
+        <h2>Featured Today</h2>
+        <a href="#" className="view-all">
+          View All →
+        </a>
+      </div>
 
-      <div className="features-grid">
-        <div className="feature-card orange">
-          <div className="icon-box-orange">
-            <FaClock />
-          </div>
-          <div className="feature-text">
-            <h3>Real-Time Countdown</h3>
-            <p>
-              Live timers on every post create urgency and ensure quick action
-            </p>
-          </div>
-        </div>
+      <div className="featured-grid">
+        {items.map((item) => (
+          <div key={item.id} className="featured-card">
+            <div className="image-container">
+              <img src={item.image} alt={item.title} />
+              <span className="tag">{item.tag}</span>
+              <span className="discount">{item.discount}</span>
+            </div>
 
-        <div className="feature-card green">
-          <div className="icon-box-green">
-            <FaMapMarkerAlt />
-          </div>
-          <div className="feature-text">
-            <h3>Live Map View</h3>
-            <p>
-              Interactive map showing all available food locations in real-time
-            </p>
-          </div>
-        </div>
+            <div className="featured-content">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
 
-        <div className="feature-card orange">
-          <div className="icon-box-orange">
-            <FaHeart />
-          </div>
-          <div className="feature-text">
-            <h3>Free or Paid Options</h3>
-            <p>
-              Flexible pricing allows both donations and affordable food sales
-            </p>
-          </div>
-        </div>
+              <div className="info">
+                <span>
+                  <FaMapMarkerAlt /> {item.location}
+                </span>
+                <span>
+                  <FaClock /> {item.time}
+                </span>
+              </div>
 
-        <div className="feature-card green">
-          <div className="icon-box-green">
-            <FaUsers />
+              <div className="price-row">
+                <div className="price">
+                  <strong>${item.price}</strong>{" "}
+                  <span className="old-price">${item.oldPrice}</span>
+                </div>
+                <button className="details-btn">View Details</button>
+              </div>
+            </div>
           </div>
-          <div className="feature-text">
-            <h3>Role-Based Access</h3>
-            <p>
-              Secure admin and volunteer roles with proper authentication
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
-}
+};
+
+export default Featured;
